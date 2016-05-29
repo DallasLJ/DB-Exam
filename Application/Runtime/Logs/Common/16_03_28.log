@@ -1,0 +1,12 @@
+[ 2016-03-28T18:33:29+08:00 ] 127.0.0.1 /index.php/Exam/setproblem/18.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Exam
+
+[ 2016-03-28T18:33:39+08:00 ] 127.0.0.1 /index.php/Exam/setproblem/18.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Exam
+

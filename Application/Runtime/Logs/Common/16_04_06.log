@@ -1,0 +1,18 @@
+[ 2016-04-06T15:49:30+08:00 ] ::1 /index.php/index.php/Home/Status/status.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000976s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001953s ]
+ERR: 无法加载模块:Index.php
+
+[ 2016-04-06T15:51:01+08:00 ] ::1 /index.php/index.php/Home/Status/status.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003906s ]
+ERR: 无法加载模块:Index.php
+
+[ 2016-04-06T15:51:14+08:00 ] ::1 /index.php/index.php/Home/Status/status.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000976s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001953s ]
+ERR: 无法加载模块:Index.php
+

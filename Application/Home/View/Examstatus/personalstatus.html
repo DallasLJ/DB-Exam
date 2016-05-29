@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PersonalExamStatus</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/pagelist.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/main.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/table.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/problem.css">
+</head>
+<body>
+	<div class="top"></div>
+    <div class="main">
+        <div class="pic">
+            <div id="logo"><img src="__PUBLIC__/Picture/Photoshop.png" style="height:100px;weight:100px;"></div>
+            <div id="title">
+                <h1>在线考试系统</h1>
+                <h2>快乐考试，考试快乐</h2>
+            </div>
+            <div style="float:right;width:100px;height:100px;">
+                <p>{:session('username')}<?php if (session('utype') == 1): ?>
+                    同学
+                <?php else : ?>
+                    <?php if (session('utype') == 2): ?>
+                        老师
+                    <?php else : ?>
+                        管理员
+                    <?php endif ?>
+                <?php endif ?></p>
+                <a href='{:U('Login/loginout')}')>退出登录</a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul class="menulist">
+                <li>
+                    <a href="{:U('Index/index')}">首页</a>
+                </li>
+                <li>
+                    <a href="{:U('Exam/listexam')}">在线考试</a>
+                </li>
+                <li>
+                    <a href="{:U('Exam/listexam')}">成绩查询</a>
+                </li>
+                <li>
+                    <a href="{:U('Problem/listproblem')}">在线练习</a>
+                </li>
+                <li>
+                    <a href="{:U('Status/status')}">状态查询</a>
+                </li>
+            </ul>
+        </div>
+        <div class="context">
+            <div class="lab" style="margin-bottom:10px; font-weight:700;">个人考试状态</div>
+		    <div>
+				<table class="bordered">
+					<thead>
+						<tr>
+							<th>Runid</th>
+							<th>Examid</th>
+							<th>Order</th>
+							<th>uid</th>
+							<th>submit_time</th>
+							<th>status</th>
+							<th>score</th>
+						</tr>
+					</thead>
+					<tbody>
+						<volist name="list" id="vo">
+							<tr>
+								<td>{$vo.id}</td>
+								<td>{$vo.examid}</td>
+								<td>{$vo.problem_order}</td>
+								<td>{$vo.uid}</td>
+								<td>{$vo.submit_time}</td>
+								<td>{$vo.status}</td>
+								<td>{$vo.score}</td>
+							</tr>
+						</volist>
+					</tbody>
+				</table>
+			</div>
+			<div class="pagelist">{$page}</div>
+		</div>
+		<div class="footer">
+            <ul class="footer_list">
+                <li class="footer_href">
+                    <a href="{:U('Index/index')}">Home</a>
+                    |
+                    <a href="#top">Top</a>
+                </li>
+                <li class="footer_server">
+                    <p>Online Examination System 1.0</p>
+                    <p>Copyright © 2005-2016. All Rights Reserved.</p>
+                    <p>Designer & Developer : Zhuxiangdong</p>
+                </li>
+                <li>
+                    <?php if (session('utype') == 3): ?>
+                        <a href="{:U('Admin/administration')}">Administration</a>
+                    <?php else: ?>
+                        <p>Administration</p>
+                    <?php endif ?></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

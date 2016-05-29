@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Problem Set</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/pagelist.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/main.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/table.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/input.css">
+</head>
+<body>
+	<div class="top"></div>
+    <div class="main">
+        <div class="pic">
+            <div id="logo"><img src="__PUBLIC__/Picture/Photoshop.png" style="height:100px;weight:100px;"></div>
+            <div id="title">
+                <h1>在线考试系统</h1>
+                <h2>快乐考试，考试快乐</h2>
+            </div>
+            <div style="float:right;width:100px;height:100px;">
+                <p>{:session('username')}<?php if (session('utype') == 1): ?>
+                    同学
+                <?php else : ?>
+                    <?php if (session('utype') == 2): ?>
+                        老师
+                    <?php else : ?>
+                        管理员
+                    <?php endif ?>
+                <?php endif ?></p>
+                <a href='{:U('Login/loginout')}')>退出登录</a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul class="menulist">
+                <li>
+                    <a href="{:U('Index/index')}">首页</a>
+                </li>
+                <li>
+                    <a href="{:U('Exam/listexam')}">在线考试</a>
+                </li>
+                <li>
+                    <a href="{:U('Exam/listexam')}">成绩查询</a>
+                </li>
+                <li>
+                    <a href="{:U('Problem/listproblem')}">在线练习</a>
+                </li>
+                <li>
+                    <a href="{:U('Status/status')}">状态查询</a>
+                </li>
+            </ul>
+        </div>
+        <div class="context">
+            <div class="lab-full" style="margin-bottom:10px;font-weight:700;">
+                在线练习
+                <a href="{$prourl}" style="float:right;margin-right:30px;">考试题目集</a>
+            </div>
+			<table class="bordered" style="margin-bottom:10px;">
+				<thead>
+					<tr>
+                        <th style="width:35px;text-align:center">选中</th>
+						<th style="width:50px;">题目id</th>
+                        <th>标题</th>
+						<th style="width:50px;">题型</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist name="list" id="vo">
+						<tr>
+                            <td style="text-align:center"><input type="checkbox" name="pid" value="{$vo['id']}" style="height: auto;margin: 0;"></td>
+							<td>{$vo.id}</td>
+                            <td>
+                                <a href="{:U('showproblem?pid='.$vo['id'])}">{$vo.title}</a>
+                            </td>
+							<td>
+								<switch name="vo['typeid']">
+									<case value="1">查找题</case>
+									<case value="2">插入题</case>
+									<case value="3">删除题</case>
+									<case value="4">更新题</case>
+                                    <case value="5">建表题</case>
+								</switch>
+							</td>	
+						</tr>
+					</volist>
+				</tbody>
+			</table>
+            <button id="subbtn" style="float:left;">提交</button>
+		</div>
+		<div class="pagelist">{$page}</div>
+		<div class="footer">
+            <ul class="footer_list">
+                <li class="footer_href">
+                    <a href="{:U('Index/index')}">Home</a>
+                    |
+                    <a href="#top">Top</a>
+                </li>
+                <li class="footer_server">
+                    <p>Online Examination System 1.0</p>
+                    <p>Copyright © 2005-2016. All Rights Reserved.</p>
+                    <p>Designer & Developer : Zhuxiangdong</p>
+                </li>
+                <li>
+                    <?php if (session('utype') == 3): ?>
+                        <a href="{:U('Admin/administration')}">Administration</a>
+                    <?php else: ?>
+                        <p>Administration</p>
+                    <?php endif ?></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var examid = {$examid};
+</script>
+<script type="text/javascript" src="__PUBLIC__/JS/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/JS/checkbox.js"></script>
+</html>

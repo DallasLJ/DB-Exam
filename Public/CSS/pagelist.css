@@ -1,0 +1,23 @@
+.pagelist{
+	width: 100.5%;
+	text-align: right;
+	padding: 10px 0;
+	clear: both;
+}
+.pagelist a, .pagelist .current{
+	font-size: 12px;
+	font-family: Arial;
+	margin: 0 2px;
+	background: #fff;
+	padding: 0.3em 1em;
+	text-decoration: none;
+	border-radius: 0.3em;
+	background-color: #ccc;
+	color: #323232;
+}
+
+
+.pagelist .current, .pagelist a:hover{
+	background: #4682B4;
+	color: #fff;
+}

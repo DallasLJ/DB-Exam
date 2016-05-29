@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/login.css">
+</head>
+<body>
+
+<form id="login" name="loginForm" action="__SELF__" onsubmit="transformPassword()" method="post">
+	<h1>LogIn</h1>
+	<fieldset id="inputs">
+		<input id="username" type="text" name="userid" placeholder="Username">
+		<input id="password" type="password" name="password" placeholder="Password">
+	</fieldset>
+	<fieldset id="actions">
+		<button type="submit" id="submit">login</button>
+		<a href='{:U('Login/register')}'>注册新账号</a>
+	</fieldset>
+</form>
+
+</body>
+<script src="__PUBLIC__/JS/login.js"></script>
+<script src="__PUBLIC__/JS/md5.js"></script>
+</html>
